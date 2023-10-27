@@ -1,7 +1,19 @@
 const sudoku = document.getElementById('sudoku');
 const doneButton = document.getElementById('done-button');
 
-const enteredValues = new Array(9).fill(null).map(() => new Array(9).fill(null));
+const numRows = 9;
+const numCols = 9;
+
+const enteredValues = [];
+
+for (let i = 0; i < numRows; i++) {
+    enteredValues[i] = [];
+    for (let j = 0; j < numCols; j++) {
+        enteredValues[i][j] = 0;
+    }
+}
+
+// const enteredValues = new Array(9).fill(null).map(() => new Array(9).fill(null));
 
 function populateSudokuGrid() {
     for (let row = 0; row < 9; row++) {
@@ -18,7 +30,7 @@ function populateSudokuGrid() {
                     alert("Please enter a number from 1 to 9.");
                     cell.value = 9; // Limit the input to 9
                 }
-                enteredValues[row][col] = parseInt(cell.value) || null;
+                enteredValues[row][col] = parseInt(cell.value) || 0;
             });
 
             sudoku.appendChild(cell);
