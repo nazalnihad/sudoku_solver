@@ -1,5 +1,6 @@
 const sudoku = document.getElementById('sudoku');
 const doneButton = document.getElementById('done-button');
+const resetButton = document.getElementById('reset-button');
 
 const numRows = 9;
 const numCols = 9;
@@ -91,18 +92,16 @@ function solve() {
     return true; // Indicates that the puzzle is solved
 }
 
-
-
-function isSudokuSolved() {
-    // Check if the Sudoku grid is completely filled
-    for (let i = 0; i < 9; i++) {
-        for (let j = 0; j < 9; j++) {
-            if (enteredValues[i][j] === 0) {
-                return false;
-            }
+function reset() {
+    const cells = document.getElementsByClassName('sudoku-cell');
+    let index = 0;
+    for (let i = 0; i < 9; i++){
+        for (let j = 0; j < 9; j++){
+            enteredValues[i][j] = 0;
+            cells[index].value = '';
+            index++;
         }
     }
-    return true;
 }
 
 populateSudokuGrid();
@@ -113,6 +112,9 @@ doneButton.addEventListener('click', () => {
     console.log(enteredValues);
 });
 
+resetButton.addEventListener('click', () => {
+    reset();
+})
 
 function populateSudokuGridWithValues() {
     const cells = document.getElementsByClassName('sudoku-cell');
