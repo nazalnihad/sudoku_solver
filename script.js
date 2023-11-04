@@ -99,6 +99,7 @@ function reset() {
         for (let j = 0; j < 9; j++){
             enteredValues[i][j] = 0;
             cells[index].value = '';
+            cells[index].classList.remove('num_color');
             index++;
         }
     }
