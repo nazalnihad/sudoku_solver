@@ -20,6 +20,7 @@ function populateSudokuGrid() {
         for (let col = 0; col < 9; col++) {
             const cell = document.createElement('input');
             cell.classList.add('sudoku-cell');
+            
             cell.type = 'number';
             cell.min = 1;
             cell.max = 9;
@@ -33,6 +34,7 @@ function populateSudokuGrid() {
                     alert("This number violates Sudoku rules.");
                     cell.value = ''; // Clear the input
                 } else {
+                    cell.classList.add('num_color');
                     enteredValues[row][col] = value;
                 }
             });

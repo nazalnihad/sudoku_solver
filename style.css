@@ -19,7 +19,6 @@ body {
 }
 
 .sudoku-cell {
-    border: 1px solid #000; /* Add this to show borders */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,38 +28,41 @@ body {
     height: 100%;
     box-sizing: border-box;
     text-align: center;
-    /* outline: none; Remove the default input focus outline */
+    border: 1px solid #999999;
     padding: 0;
     margin: 0;
     /* border: none; */
+}
+.num_color{
+    color: red;
 }
 .sudoku-cell input[type="number"] {
     /* padding:3px; */
     appearance: textfield; /* Other browsers */
     width: 100%;
     height: 100%;
-    /* justify-content: center; */
     text-align: center; /* Center the input value */
     font-size: 1.2rem; /* Match the font size */
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
 button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #0074d9;
+    margin-top: 15px;
+    padding: 15px 30px;
+    background-color: #909090;
     color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
     background-color: #0056b3;
-}
-
-.sudoku-cell {
-    /* Your existing cell styles */
-    border: 1px solid #ccc;
-    /* Other cell styles */
 }
 
 .sudoku-cell:nth-child(3n), .sudoku-cell:nth-child(6n) {
@@ -71,4 +73,12 @@ button:hover {
 .sudoku-cell:nth-child(n+46):nth-child(-n+54),
 .sudoku-cell:nth-child(n+73):nth-child(-n+81) {
     border-bottom: 3px solid #000; /* Extra dark bottom border for 3x3 blocks */
+}
+
+p{
+    font-size: 70px;
+    margin-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 8px;
+    font-family: 'Black Ops One';
 }
