@@ -83,3 +83,36 @@ p{
     margin-bottom: 8px;
     font-family: 'Black Ops One';
 }
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.github-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('github-mark-white.png') no-repeat;
+    background-size: cover;
+    margin-right: 5px;
+    vertical-align: middle;
+}
